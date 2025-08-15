@@ -15,6 +15,8 @@ dependencies {
     implementation("dev.kord:kord-core:0.15.0")
     implementation("com.charleskorn.kaml:kaml:0.80.1")
     implementation("ch.qos.logback:logback-classic:1.5.18")
+    implementation("com.google.firebase:firebase-admin:9.5.0")
+    implementation("com.aallam.openai:openai-client:4.0.1")
     testImplementation(kotlin("test"))
 }
 

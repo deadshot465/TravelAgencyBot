@@ -8,4 +8,6 @@ object Configuration {
     private val config = Yaml.default.decodeFromString(Config.serializer(), configFile.readText())
 
     val token: String = config.token
+    val serviceAccountFileName: String = config.serviceAccountFileName
+    val openRouterApiKey: String = config.openRouterApiKey
 }
