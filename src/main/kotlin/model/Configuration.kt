@@ -10,4 +10,8 @@ object Configuration {
     val token: String = config.token
     val serviceAccountFileName: String = config.serviceAccountFileName
     val openRouterApiKey: String = config.openRouterApiKey
+    val languageTriagePrompt: String = config.languageTriagePrompt
+    val english: PromptSet = config.english
+    val chinese: PromptSet = config.chinese
+    val japanese: PromptSet = config.japanese
 }

@@ -7,7 +7,7 @@ import org.deadshot465.model.Configuration
 
 private val config = OpenAIConfig(
     token = Configuration.openRouterApiKey,
-    host = OpenAIHost(baseUrl = "https://openrouter.ai/api/v1")
+    host = OpenAIHost(baseUrl = "https://openrouter.ai/api/v1/")
 )
 
 val openRouterClient = OpenAI(config)

@@ -4,5 +4,5 @@ data class PlanMapping(
     val planId: String,
     val threadId: String,
     val channelId: String?,
-    val originalMessageId: String?
+    val originalMessageId: String?,
 )

@@ -39,7 +39,7 @@ suspend fun main() {
                 it.get("plan_id") as String,
                 threadId,
                 it.get("channel_id") as String?,
-                it.get("original_message_id") as String?
+                it.get("original_message_id") as String?,
             )
         } else {
             null

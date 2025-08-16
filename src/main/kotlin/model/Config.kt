@@ -6,5 +6,9 @@ import kotlinx.serialization.Serializable
 data class Config(
     val token: String,
     val serviceAccountFileName: String,
-    val openRouterApiKey: String
+    val openRouterApiKey: String,
+    val languageTriagePrompt: String,
+    val english: PromptSet,
+    val chinese: PromptSet,
+    val japanese: PromptSet
 )
