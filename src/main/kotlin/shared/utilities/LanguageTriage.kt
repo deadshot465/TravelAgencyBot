@@ -67,6 +67,6 @@ suspend fun determineLanguage(message: String): Language {
 }
 
 private fun ToolCall.Function.execute(): Language {
-    val args = Json.decodeFromString<LanguageTriageArguments>(function.arguments)
+    val args = defaultJsonSerializer.decodeFromString<LanguageTriageArguments>(function.arguments)
     return args.language
 }
