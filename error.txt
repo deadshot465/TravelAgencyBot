@@ -1,0 +1,65 @@
+HttpClient: REQUEST: https://openrouter.ai/api/chat/completions
+METHOD: HttpMethod(value=POST)
+COMMON HEADERS
+-> Accept: application/json
+-> Accept-Charset: UTF-8
+-> Authorization: ***
+CONTENT HEADERS
+-> Content-Length: 907
+-> Content-Type: application/json
+HttpClient: RESPONSE: 200 
+METHOD: HttpMethod(value=POST)
+FROM: https://openrouter.ai/api/chat/completions
+COMMON HEADERS
+-> access-control-allow-headers: Authorization, User-Agent, X-Api-Key, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, HTTP-Referer, X-Windowai-Title, X-Openrouter-Title, X-Title, X-Stainless-Lang, X-Stainless-Package-Version, X-Stainless-OS, X-Stainless-Arch, X-Stainless-Runtime, X-Stainless-Runtime-Version, X-Stainless-Retry-Count, Protection-Key
+-> access-control-allow-methods: GET,OPTIONS,PATCH,DELETE,POST,PUT
+-> access-control-allow-origin: *
+-> cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+-> cf-cache-status: DYNAMIC
+-> cf-ray: 97027144ff29afb7-NRT
+-> content-security-policy: default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://basehub.com https://*.pusher.com https://clerk.openrouter.ai https://challenges.cloudflare.com https://checkout.stripe.com https://connect-js.stripe.com https://js.stripe.com https://maps.googleapis.com https://www.googletagmanager.com 'wasm-unsafe-eval' https://unpkg.com https://esm.sh https://*.us5.datadoghq.com https://cdn.jsdelivr.net https://*.algolia.net https://*.algolianet.com https://app.buildwithfern.com https://prod.ferndocs.com https://cdn.segment.com https://jobs.ashbyhq.com https://*.posthog.com; connect-src 'self' https://basehub.com https://aws.basehub.com https://*.pusher.com wss://*.pusher.com https://clerk.openrouter.ai https://checkout.stripe.com https://api.stripe.com https://maps.googleapis.com *.google-analytics.com https://www.googletagmanager.com https://raw.githubusercontent.com wss://www.walletlink.org/rpc https://static.cloudflareinsights.com https://esm.sh https://*.us5.datadoghq.com https://*.algolia.net https://*.algolianet.com https://app.buildwithfern.com https://prod.ferndocs.com https://api.segment.io https://cdn.segment.com https://www.openrouter.ai https://openrouter.ai https://jobs.ashbyhq.com https://api.ashbyhq.com/ https://*.posthog.com; frame-src 'self' https://basehub.com https://*.pusher.com https://challenges.cloudflare.com https://checkout.stripe.com https://connect-js.stripe.com https://js.stripe.com https://hooks.stripe.com https://us5.datadoghq.com https://openrouter.notion.site https://*.us5.datadoghq.com https://app.buildwithfern.com https://prod.ferndocs.com https://jobs.ashbyhq.com; img-src 'self' data: blob: https://basehub.com https://*.basehub.com https://*.pusher.com https://img.clerk.com https://*.stripe.com https://www.googletagmanager.com https://source.unsplash.com https://t0.gstatic.com https://*.algolia.io https://files.buildwithfern.com https://icons.ferndocs.com; worker-src 'self' blob: data:; style-src 'self' 'unsafe-inline' sha256-0hAheEzaMe6uXIKV4EehS9pu1am1lj/KnnzrOYqckXk= https://fonts.googleapis.com https://unpkg.com https://cdn.jsdelivr.net https://app.buildwithfern.com https://prod.ferndocs.com https://jobs.ashbyhq.com; frame-ancestors 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; upgrade-insecure-requests
+-> content-type: text/html; charset=utf-8
+-> date: Sat, 16 Aug 2025 16:52:29 GMT
+-> link: </_next/static/media/5b01f339abf2f1a5.p.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/media/e4af272ccee01ff0-s.p.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2"
+-> permissions-policy: payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com" "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")
+-> referrer-policy: no-referrer, strict-origin-when-cross-origin
+-> server: cloudflare
+-> strict-transport-security: max-age=63072000
+-> vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch; accept-encoding
+-> x-content-type-options: nosniff
+-> x-frame-options: SAMEORIGIN
+-> x-matched-path: /[maker-id]/[slug]/[tab]
+-> x-powered-by: Next.js
+-> x-vercel-cache: MISS
+-> x-vercel-id: hnd1::sin1::spjbh-1755363149633-c455bb921109
+01:52:29.868 [DefaultDispatcher-worker-2] ERROR dev.kord.core.Kord -- catching
+com.aallam.openai.api.exception.OpenAIHttpException: Expected response body of the type 'class com.aallam.openai.api.chat.ChatCompletion (Kotlin reflection is not available)' but was 'class io.ktor.utils.io.SourceByteReadChannel (Kotlin reflection is not available)'
+In response from `https://openrouter.ai/api/chat/completions`
+Response status `200 `
+Response header `ContentType: text/html; charset=utf-8` 
+Request header `Accept: application/json`
+
+You can read how to resolve NoTransformationFoundException at FAQ: 
+https://ktor.io/docs/faq.html#no-transformation-found-exception
+	at com.aallam.openai.client.internal.http.HttpTransport.handleException(HttpTransport.kt:76)
+	at com.aallam.openai.client.internal.http.HttpTransport.perform(HttpTransport.kt:34)
+	at com.aallam.openai.client.internal.http.HttpTransport$perform$1.invokeSuspend(HttpTransport.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:832)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+Caused by: io.ktor.client.call.NoTransformationFoundException: Expected response body of the type 'class com.aallam.openai.api.chat.ChatCompletion (Kotlin reflection is not available)' but was 'class io.ktor.utils.io.SourceByteReadChannel (Kotlin reflection is not available)'
+In response from `https://openrouter.ai/api/chat/completions`
+Response status `200 `
+Response header `ContentType: text/html; charset=utf-8` 
+Request header `Accept: application/json`
+
+You can read how to resolve NoTransformationFoundException at FAQ: 
+https://ktor.io/docs/faq.html#no-transformation-found-exception
+	at io.ktor.client.call.HttpClientCall.bodyNullable(HttpClientCall.kt:92)
+	at io.ktor.client.call.HttpClientCallKt.body(HttpClientCall.kt:151)
+	at com.aallam.openai.client.internal.http.HttpTransport.perform(HttpTransport.kt:32)
+	... 7 common frames omitted
+Caused by: io.ktor.client.call.NoTransformationFoundException: Expected response body of the type 'class com.aallam.openai.api.chat.ChatCompletion (Kotlin reflection is not available)' but was 'class io.ktor.utils.io.SourceByteReadChannel (Kotlin reflection is not available)'

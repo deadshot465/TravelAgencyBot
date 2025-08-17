@@ -5,7 +5,6 @@ import com.aallam.openai.api.chat.ChatRole
 import com.aallam.openai.api.core.FinishReason
 import com.aallam.openai.api.core.Parameters
 import com.aallam.openai.api.model.ModelId
-import com.google.cloud.firestore.DocumentReference
 import com.google.cloud.firestore.DocumentSnapshot
 import com.google.cloud.firestore.Firestore
 import dev.kord.common.entity.Snowflake
@@ -24,11 +23,7 @@ import org.deadshot465.model.*
 import org.deadshot465.shared.defaultModelName
 import org.deadshot465.shared.openRouterClient
 import org.deadshot465.shared.temperatureMedium
-import org.deadshot465.shared.utilities.defaultJsonSerializer
-import org.deadshot465.shared.utilities.determineLanguage
-import org.deadshot465.shared.utilities.saveAssistantMessage
-import org.deadshot465.shared.utilities.saveUserMessage
-import org.deadshot465.shared.utilities.updateLanguageSetting
+import org.deadshot465.shared.utilities.*
 import org.slf4j.LoggerFactory
 
 suspend fun handleTravelThreadMessage(
