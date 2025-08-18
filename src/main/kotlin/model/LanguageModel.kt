@@ -4,5 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 enum class LanguageModel {
-    Gemini25Flash
+    Gemini25Flash,
+    Gemini25Pro
 }

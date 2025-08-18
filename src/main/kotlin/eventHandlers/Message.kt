@@ -262,18 +262,25 @@ private suspend fun exportItinerary(
         } catch (_: IllegalArgumentException) {
             null
         }
-    }.last { it.isFinalResult!! }
+    }.lastOrNull { it.isFinalResult!! }
 
-    val finalResult = defaultJsonSerializer.decodeFromString<FinalResult>(generationDump.content).finalResult
-    val message = channel.createMessage {
-        addFile("travel_plan.txt", ChannelProvider(null) {
-            ByteReadChannel(finalResult)
-        })
+    if (generationDump != null) {
+        val finalResult = defaultJsonSerializer.decodeFromString<FinalResult>(generationDump.content).finalResult
+        val message = channel.createMessage {
+            addFile("travel_plan.txt", ChannelProvider(null) {
+                ByteReadChannel(finalResult)
+            })
+        }
+        val payload = mapOf(
+            "file_link" to message.attachments.first().url
+        )
+        return defaultJsonSerializer.encodeToString(payload)
+    } else {
+        val payload = mapOf(
+            "error" to "No travel plan found. Is the top planner still planning?"
+        )
+        return defaultJsonSerializer.encodeToString(payload)
     }
-    val payload = mapOf(
-        "file_link" to message.attachments.first().url
-    )
-    return defaultJsonSerializer.encodeToString(payload)
 }
 
 private suspend fun reviseItinerary(arguments: ReviseItineraryArguments): String {
